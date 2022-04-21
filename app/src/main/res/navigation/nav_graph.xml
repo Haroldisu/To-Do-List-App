@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/todoList2">
+
+    <fragment
+        android:id="@+id/newTask"
+        android:name="com.example.todoapp.NewTask"
+        android:label="fragment_new_task"
+        tools:layout="@layout/fragment_new_task" >
+        <action
+            android:id="@+id/action_newTask_to_timePickerFragment"
+            app:destination="@id/timePickerFragment" />
+        <action
+            android:id="@+id/action_newTask_to_todoList2"
+            app:destination="@id/todoList2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailProfile"
+        android:name="com.example.todoapp.DetailProfile"
+        android:label="fragment_detail_profile"
+        tools:layout="@layout/fragment_detail_profile" />
+    <fragment
+        android:id="@+id/todoList2"
+        android:name="com.example.todoapp.TodoList"
+        android:label="fragment_todo_list"
+        tools:layout="@layout/fragment_todo_list" >
+        <action
+            android:id="@+id/action_todoList2_to_newTask"
+            app:destination="@id/newTask" />
+        <action
+            android:id="@+id/action_todoList2_to_datePage"
+            app:destination="@id/datePage" />
+        <action
+            android:id="@+id/action_todoList2_to_detailProfile"
+            app:destination="@id/detailProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/datePage"
+        android:name="com.example.todoapp.DatePage"
+        android:label="fragment_date_page"
+        tools:layout="@layout/fragment_date_page" />
+    <fragment
+        android:id="@+id/timePickerFragment"
+        android:name="com.example.todoapp.TimePickerFragment"
+        android:label="fragment_time_picker"
+        tools:layout="@layout/fragment_time_picker" />
+</navigation>
